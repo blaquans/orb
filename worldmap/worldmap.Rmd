@@ -32,6 +32,32 @@ ggplot(data = wg, aes(x = long, y = lat, group = group, map_id = id)) +
   coord_map(xlim = c(-180,180), ylim = c(-55,90))
 ```
 
+## Projection 
+
+```{r}
+map  <-  ggplot(data = wg, aes(x = long, y = lat, group = group)) + 
+  geom_polygon(color = "white") + 
+  theme_tufte(ticks = FALSE) + 
+  labs(title = "Carte du monde") + 
+  theme(axis.text = element_blank(), legend.position = "bottom", axis.title = element_blank()) 
+```
+
+```{r}
+map + coord_map(xlim = c(-180,180), ylim = c(-55,90))
+map + coord_map(xlim = c(-180,180), ylim = c(-55,90), projection="mercator")
+map + coord_map(xlim = c(-180,180), ylim = c(-55,90), projection="sinusoidal")
+map + coord_map(xlim = c(-180,180), ylim = c(-55,90), projection="cylindrical")
+map + coord_map(xlim = c(-180,180), ylim = c(-55,90), projection="rectangular", lat0 = 46)
+map + coord_map(xlim = c(-180,180), ylim = c(-55,90), projection="gall", lat0 = 46)
+map + coord_map(xlim = c(-180,180), ylim = c(-55,90), projection="mollweide")
+map + coord_map(xlim = c(-180,180), ylim = c(-55,90), projection="gilbert")
+map + coord_map(xlim = c(-180,180), ylim = c(-55,90), projection="perspective", dist = 1)
+map + coord_map(xlim = c(-180,180), ylim = c(-55,90), projection="orthographic")
+map + coord_map(xlim = c(-180,180), ylim = c(-55,90), projection="globular")
+```
+
+
+
 ## Problème avec la carte
 * Problème avec le Groenland
 ```{r}

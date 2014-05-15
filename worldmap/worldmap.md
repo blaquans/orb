@@ -77,6 +77,89 @@ ggplot(data = wg, aes(x = long, y = lat, group = group, map_id = id)) + geom_map
 ![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
 
 
+## Projection 
+
+
+```r
+map <- ggplot(data = wg, aes(x = long, y = lat, group = group)) + geom_polygon(color = "white") + 
+    theme_tufte(ticks = FALSE) + labs(title = "Carte du monde") + theme(axis.text = element_blank(), 
+    legend.position = "bottom", axis.title = element_blank())
+```
+
+
+
+```r
+map + coord_map(xlim = c(-180, 180), ylim = c(-55, 90))
+```
+
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-51.png) 
+
+```r
+map + coord_map(xlim = c(-180, 180), ylim = c(-55, 90), projection = "mercator")
+```
+
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-52.png) 
+
+```r
+map + coord_map(xlim = c(-180, 180), ylim = c(-55, 90), projection = "sinusoidal")
+```
+
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-53.png) 
+
+```r
+map + coord_map(xlim = c(-180, 180), ylim = c(-55, 90), projection = "cylindrical")
+```
+
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-54.png) 
+
+```r
+map + coord_map(xlim = c(-180, 180), ylim = c(-55, 90), projection = "rectangular", 
+    lat0 = 46)
+```
+
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-55.png) 
+
+```r
+map + coord_map(xlim = c(-180, 180), ylim = c(-55, 90), projection = "gall", 
+    lat0 = 46)
+```
+
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-56.png) 
+
+```r
+map + coord_map(xlim = c(-180, 180), ylim = c(-55, 90), projection = "mollweide")
+```
+
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-57.png) 
+
+```r
+map + coord_map(xlim = c(-180, 180), ylim = c(-55, 90), projection = "gilbert")
+```
+
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-58.png) 
+
+```r
+map + coord_map(xlim = c(-180, 180), ylim = c(-55, 90), projection = "perspective", 
+    dist = 1)
+```
+
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-59.png) 
+
+```r
+map + coord_map(xlim = c(-180, 180), ylim = c(-55, 90), projection = "orthographic")
+```
+
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-510.png) 
+
+```r
+map + coord_map(xlim = c(-180, 180), ylim = c(-55, 90), projection = "globular")
+```
+
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-511.png) 
+
+
+
+
 ## Problème avec la carte
 * Problème avec le Groenland
 
@@ -89,7 +172,7 @@ ggplot() + geom_map(data = world, aes(x = long, y = lat, group = group, map_id =
     180), ylim = c(-60, 90))
 ```
 
-![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4.png) 
+![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6.png) 
 
 
 
