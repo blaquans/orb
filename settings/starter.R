@@ -7,6 +7,10 @@ library("hints")
 library("sos")
 library("foreign")
 
+library("wesanderson")
+pal <- wes.palette(name = "Zissou", type = "continuous")
+
+
 french <- function(x) str_trim(format(x, big.mark = " ", decimal.mark = ","))
 pourcent <- function(x) paste(x, "%", sep = " ")
 unfrench <- function(x) {
