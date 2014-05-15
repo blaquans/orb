@@ -1,0 +1,53 @@
+library(ggplot2)
+library(maps) 
+world <- map_data("world")
+ggplot() +   geom_map( data=world, aes(x=long, y=lat, group = group, map_id = region), colour="white", fill="grey10", map = world ) + coord_map(xlim=c(-180,180), ylim=c(-60, 90))
+
+
+library(rgdal)
+library(ggplot2)
+library(maptools)
+library(ggthemes)
+library(rgeos)
+library("wesanderson")
+pal <- wes.palette(name = "Zissou", type = "continuous")
+# Data from http://thematicmapping.org/downloads/world_borders.php.
+# Direct link: http://thematicmapping.org/downloads/TM_WORLD_BORDERS_SIMPL-0.3.zip
+# Unpack and put the files in a dir 'data'
+
+#gpclibPermit()
+world.map <- readOGR(dsn="data/TM_WORLD_BORDERS_SIMPL-0.3/", layer="TM_WORLD_BORDERS_SIMPL-0.3")
+wg <- fortify(world.map, region = "ISO3")
+
+ggplot(data = wg, aes(x = long, y = lat, group = group)) + 
+  geom_polygon(color = "white") + 
+  theme_tufte(ticks = FALSE) + 
+  labs(title = "Carte du monde") + 
+  theme(axis.text = element_blank(), legend.position = "bottom", axis.title = element_blank()) + 
+  coord_map(xlim = c(-180,180), ylim = c(-60,90))
+
+
+ggplot(data = wg, aes(x = long, y = lat, group = group, map_id = id)) + 
+  geom_map(color = "white", map= wg) + 
+  theme_tufte(ticks = FALSE) + 
+  labs(title = "Carte du monde") + 
+  theme(axis.text = element_blank(), legend.position = "bottom", axis.title = element_blank()) + 
+  coord_map(xlim = c(-180,180), ylim = c(-55,90))
+
+
+ggplot(data = wg, aes(x = long, y = lat, group = group, map_id = id)) + 
+  geom_map(color = "white", map= wg) + 
+  theme_tufte(ticks = FALSE) + 
+  labs(title = "Carte du monde") + 
+  theme(axis.text = element_blank(), legend.position = "bottom", axis.title = element_blank()) + 
+  coord_map(xlim = c(-180,180), ylim = c(-55,90))
+
+
+
+ggplot(data = wg, aes(x = long, y = lat, group = group, map_id = id)) + 
+  geom_map(color = "black", map= wg, fill = "white") + 
+  theme_tufte(ticks = FALSE) + 
+  labs(title = "Carte du monde") + 
+  theme(axis.text = element_blank(), legend.position = "bottom", axis.title = element_blank()) + 
+  coord_map(xlim = c(-180,180), ylim = c(-55,90))
+
