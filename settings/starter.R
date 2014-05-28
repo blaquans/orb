@@ -7,7 +7,7 @@ library("scales")
 #library("sos")
 #library("foreign")
 library("dplyr")
-
+library("XLConnect")
 library("wesanderson")
 pal <- wes.palette(name = "Zissou", type = "continuous")
 
