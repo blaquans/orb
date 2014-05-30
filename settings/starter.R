@@ -7,7 +7,7 @@ library("scales")
 #library("sos")
 #library("foreign")
 library("dplyr")
-library("XLConnect")
+#library("XLConnect")
 library("wesanderson")
 pal <- wes.palette(name = "Zissou", type = "continuous")
 
@@ -21,3 +21,6 @@ dimension <- c(width = 297/25.4, height = 175/25.4)
 dimension
 a4 <- c(width = 297/25.4, height = 210/25.4)
 a4
+
+# Useful command to have error messages in English instead of French 
+Sys.setenv(LANGUAGE='en')
