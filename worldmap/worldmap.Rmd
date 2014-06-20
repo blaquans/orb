@@ -9,8 +9,10 @@ pal <- wes.palette(name = "Zissou", type = "continuous")
 # Data from http://thematicmapping.org/downloads/world_borders.php.
 # Direct link: http://thematicmapping.org/downloads/TM_WORLD_BORDERS_SIMPL-0.3.zip
 # Unpack and put the files in a dir 'data'
-world.map <- readOGR(dsn="TM_WORLD_BORDERS_SIMPL-0.3/", layer="TM_WORLD_BORDERS_SIMPL-0.3")
+world.map <- readOGR(dsn="worldmap/TM_WORLD_BORDERS_SIMPL-0.3/", layer="TM_WORLD_BORDERS_SIMPL-0.3")
+
 wg <- fortify(world.map, region = "ISO3")
+
 ```
 
 
