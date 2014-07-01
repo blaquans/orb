@@ -1,6 +1,6 @@
 theme_blaquans  <- function (base_size = 12, base_family = "") {
-  require("scales")  
-  require("grid")
+  require("scales", quietly = TRUE)  
+  require("grid", quietly = TRUE)
   theme(
         line = element_line(colour = "black", size = 0.5, linetype = 1, lineend = "butt"), 
         rect = element_rect(fill = "white", colour = "black", size = 0.5, linetype = 1), 
