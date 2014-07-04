@@ -39,6 +39,6 @@ theme_blaquans  <- function (base_size = 12, base_family = "") {
         strip.text.y = element_text(angle = -90), 
         strip.background = element_blank(), 
         plot.background = element_rect(colour = "white"), 
-        plot.title = element_text(size = rel(1.2)), 
+        plot.title = element_text(size = rel(1.5), hjust = 0, face = "bold", color = "#3C3C3C"), 
         plot.margin = unit(c(1, 1, 0.5, 0.5), "lines"), complete = TRUE)
         }
