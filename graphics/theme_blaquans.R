@@ -40,5 +40,6 @@ theme_blaquans  <- function (base_size = 12, base_family = "") {
         strip.background = element_blank(), 
         plot.background = element_rect(colour = "white"), 
         plot.title = element_text(size = rel(1.5), hjust = 0, face = "bold", color = "#3C3C3C"), 
-        plot.margin = unit(c(1, 1, 0.5, 0.5), "lines"), complete = TRUE)
+        plot.margin = unit(c(1, 1, 0.5, 0.5), "lines"), 
+        complete = TRUE)
         }
