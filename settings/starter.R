@@ -10,6 +10,7 @@ library("dplyr")
 #library("XLConnect")
 library("wesanderson")
 pal <- wes.palette(name = "Zissou", type = "continuous")
+devtools::source_url("https://raw.githubusercontent.com/blaquans/orb/master/graphics/theme_blaquans.R")
 
 
 french <- function(x) str_trim(format(x, big.mark = " ", decimal.mark = ","))
