@@ -34,7 +34,7 @@ theme_blaquans  <- function (base_size = 12, base_family = "") {
         panel.grid.major = element_line(colour = "grey95"), 
         panel.grid.minor = element_line(colour = "grey95", size = 0.25), 
         panel.margin = unit(0.25, "lines"), 
-        strip.background = element_rect(fill = "grey80", colour = NA), 
+        strip.background = element_rect(fill = NA, colour = "grey95"), 
         strip.text.x = element_text(), 
         strip.text.y = element_text(angle = -90), 
         strip.background = element_blank(), 
